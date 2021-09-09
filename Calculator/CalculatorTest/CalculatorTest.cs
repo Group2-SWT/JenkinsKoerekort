@@ -139,7 +139,7 @@ namespace Calculator.Test
 
 
         // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Math.Power()
-        [TestCase(13, 3, 4.3330000000000002d)]
+        [TestCase(8, 2, 4)]
         [TestCase(10, 2, 5)]
         [TestCase(5, 0, double.NaN)]
         [TestCase(0, 3, 0)]
