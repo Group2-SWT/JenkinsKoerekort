@@ -138,7 +138,7 @@ namespace Calculator.Test
         }
 
 
-        // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Math.Power()
+        // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Divided
         [TestCase(8, 2, 4)]
         [TestCase(10, 2, 5)]
         [TestCase(5, 0, double.PositiveInfinity)]
@@ -150,6 +150,23 @@ namespace Calculator.Test
 
             // act 
             var result = cal.Divide(divided, divisor);
+
+            // assert
+            Assert.That(result, Is.EqualTo(intendedResult));
+        }
+
+        // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Math.Sqrt()
+        [TestCase(36, 6)]
+        [TestCase(-5, double.NaN)]
+        [TestCase(16,4)]
+        [TestCase(49, 7)]
+        public void TestSqrtOfa(double a, double intendedResult)
+        {
+            // arrange
+            var cal = new Calculator();
+
+            // act 
+            var result = cal.SquareRoot(a);
 
             // assert
             Assert.That(result, Is.EqualTo(intendedResult));
