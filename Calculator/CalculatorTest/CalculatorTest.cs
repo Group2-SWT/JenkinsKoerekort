@@ -141,7 +141,7 @@ namespace Calculator.Test
         // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Math.Power()
         [TestCase(8, 2, 4)]
         [TestCase(10, 2, 5)]
-        [TestCase(5, 0, double.NaN)]
+        [TestCase(5, 0, double.PositiveInfinity)]
         [TestCase(0, 3, 0)]
         public void TestThatDividedISDividedWithDivisor(double divided, double divisor, double intendedResult)
         {
