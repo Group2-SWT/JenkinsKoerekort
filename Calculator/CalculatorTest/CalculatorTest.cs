@@ -17,7 +17,7 @@ namespace Calculator.Test
             Assert.That(result, Is.EqualTo(7));
         }
 
-        // Anvender TestCaseAttribute for dual purpose: ramme alle mulige testcases for Add
+        // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Add
         [TestCase(5, 0, 5)]
         [TestCase(5, 5, 10)]
         [TestCase(5, -5, 0)]
@@ -49,7 +49,7 @@ namespace Calculator.Test
             Assert.That(result, Is.EqualTo(5));
         }
 
-        // Anvender TestCaseAttribute for dual purpose: ramme alle mulige testcases for Substraction
+        // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Substraction
         [TestCase(5, 0, 5)]
         [TestCase(0, 5, -5)]
         [TestCase(5, 5, 0)]
@@ -84,7 +84,7 @@ namespace Calculator.Test
             Assert.That(result, Is.EqualTo(100));
         }
 
-        // Anvender TestCaseAttribute for dual purpose: ramme alle mulige testcases for Multiplication
+        // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Multiplication
         [TestCase(5, 0, 0)]
         [TestCase(0, -5, 0)]
         [TestCase(5, 5, 25)]
@@ -104,7 +104,6 @@ namespace Calculator.Test
 
 
 
-
         [Test]
         public void TestThatXIsRaisedToThePowerOfEXP()
         {
@@ -119,7 +118,7 @@ namespace Calculator.Test
 
         }
 
-        // Anvender TestCaseAttribute for dual purpose: ramme alle mulige testcases for Math.Power()
+        // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Math.Power()
         [TestCase(5, 0, 1)]
         [TestCase(0, 5, 0)]
         [TestCase(0, -5, double.PositiveInfinity)]
@@ -133,6 +132,24 @@ namespace Calculator.Test
 
             // act 
             var result = cal.Power(a, b);
+
+            // assert
+            Assert.That(result, Is.EqualTo(intendedResult));
+        }
+
+
+        // Anvender TestCaseAttribute for dual purpose: ramme flere mulige testcases for Math.Power()
+        [TestCase(13, 3, 4.333)]
+        [TestCase(10, 2, 5)]
+        [TestCase(5, 0, double.NaN)]
+        [TestCase(0, 3, 0)]
+        public void TestThatDividedISDividedWithDivisor(double divided, double divisor, double intendedResult)
+        {
+            // arrange
+            var cal = new Calculator();
+
+            // act 
+            var result = cal.Divide(divided, divisor);
 
             // assert
             Assert.That(result, Is.EqualTo(intendedResult));

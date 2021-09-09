@@ -28,6 +28,15 @@ namespace Calculator
             }
             return Math.Pow(x, exp);
         }
+        public double Divide(double divided, double divisor)
+        {
+            return divided / divisor;
+        }
+
+        public double SquareRoot(double a)
+        {
+            return Math.Sqrt(a);
+        }
 
     }
 }
